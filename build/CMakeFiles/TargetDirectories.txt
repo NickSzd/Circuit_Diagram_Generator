@@ -1,0 +1,3 @@
+/home/nick/Documents/C_C++/Circuit_Diagram_Generator/build/CMakeFiles/circuit_Diagram_Generator.dir
+/home/nick/Documents/C_C++/Circuit_Diagram_Generator/build/CMakeFiles/edit_cache.dir
+/home/nick/Documents/C_C++/Circuit_Diagram_Generator/build/CMakeFiles/rebuild_cache.dir
