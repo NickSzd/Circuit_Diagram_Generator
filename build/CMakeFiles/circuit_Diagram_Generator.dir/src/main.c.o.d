@@ -27,4 +27,7 @@ CMakeFiles/circuit_Diagram_Generator.dir/src/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/nick/Documents/C_C++/Circuit_Diagram_Generator/src/stack.h
+ /home/nick/Documents/C_C++/Circuit_Diagram_Generator/src/stack.h \
+ /home/nick/Documents/C_C++/Circuit_Diagram_Generator/src/token.h \
+ /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endianness.h

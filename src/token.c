@@ -22,11 +22,25 @@ int tokenize(const char* expr, Token tokens[], int numTokens){
             tokens[tokenCount++].type = TOKEN_VAR;
         }
 
-        // Check for AND OR NOT
-        else if(expr[i] == '\'' || expr[i] == '.' || expr[i] == '+'){
+        // Check for NOT
+        else if(expr[i] == '\'' ){
             tokens[tokenCount].value[0] = expr[i++];
             tokens[tokenCount].value[1] = '\0';
-            tokens[tokenCount].type = TOKEN_OPERATOR;
+            tokens[tokenCount].type = NOT_OPERATOR;
+        }
+
+        // Check for AND
+        else if(expr[i] == '.'){
+            tokens[tokenCount].value[0] = expr[i++];
+            tokens[tokenCount].value[1] = '\0';
+            tokens[tokenCount].type = AND_OPERATOR;
+        }
+
+        // Check for OR
+        else if(expr[i] == '+'){
+            tokens[tokenCount].value[0] = expr[i++];
+            tokens[tokenCount].value[1] = '\0';
+            tokens[tokenCount].type = OR_OPERATOR;
         }
 
         // Check for Parenthesis

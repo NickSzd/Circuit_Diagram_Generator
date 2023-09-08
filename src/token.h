@@ -4,8 +4,10 @@
 // Token Types
 typedef enum {
     TOKEN_LETTER,
-    TOKEN_VAR,
-    TOKEN_OPERATOR,
+    TOKEN_VAR, // Variable
+    OR_OPERATOR, // Or Operator
+    AND_OPERATOR, // And Operator
+    NOT_OPERATOR, // Not Operator
     TOKEN_LEFT_PAREN,
     TOKEN_RIGHT_PAREN,
     TOKEN_LEFT_BRACKET,
