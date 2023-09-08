@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include<string.h>
 #include "stack.h"
-
+#include "token.h"
 bool validate_Expression(char* expr){
     if(strlen(expr) == 0)return false; // if string is of length 0
 
@@ -31,6 +31,8 @@ bool validate_Expression(char* expr){
 
 int main(){
     char buffer[STACK_SIZE];
+    Token tokens[50];
+
     printf(" ' is NOT \n . is AND \n + is OR\n");
 
     printf("Enter in Your Equation: ");
@@ -43,7 +45,13 @@ int main(){
         printf("Valid Expression\n");
     else
         return 1;
+    
+    int tokenCount = tokenize(buffer, tokens, sizeof(tokens) / sizeof(tokens[0]));
 
+    printf("Tokens:\n");
+    for (int i = 0; i < tokenCount; i++) {
+        printf("Type: %d, Value: %s\n", tokens[i].type, tokens[i].value);
+    }
 
     return 0;
 }
