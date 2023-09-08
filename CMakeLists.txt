@@ -11,5 +11,5 @@ project(circuit_Diagram_Generator VERSION 1.0
 	LANGUAGES C)
 
 
-add_executable(circuit_Diagram_Generator src/main.c src/stack.c src/stack.h src/token.h src/token.c)
+add_executable(circuit_Diagram_Generator src/main.c src/stack.c src/stack.h src/token.h src/token.c src/tree.c src/tree.h)
 target_include_directories(circuit_Diagram_Generator PRIVATE include)
