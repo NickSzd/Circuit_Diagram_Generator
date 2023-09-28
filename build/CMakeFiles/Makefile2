@@ -81,12 +81,12 @@ clean: CMakeFiles/circuit_Diagram_Generator.dir/clean
 CMakeFiles/circuit_Diagram_Generator.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/circuit_Diagram_Generator.dir/build.make CMakeFiles/circuit_Diagram_Generator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/circuit_Diagram_Generator.dir/build.make CMakeFiles/circuit_Diagram_Generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nick/Documents/C_C++/Circuit_Diagram_Generator/build/CMakeFiles --progress-num=1,2,3,4 "Built target circuit_Diagram_Generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nick/Documents/C_C++/Circuit_Diagram_Generator/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target circuit_Diagram_Generator"
 .PHONY : CMakeFiles/circuit_Diagram_Generator.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/circuit_Diagram_Generator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nick/Documents/C_C++/Circuit_Diagram_Generator/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nick/Documents/C_C++/Circuit_Diagram_Generator/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/circuit_Diagram_Generator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nick/Documents/C_C++/Circuit_Diagram_Generator/build/CMakeFiles 0
 .PHONY : CMakeFiles/circuit_Diagram_Generator.dir/rule

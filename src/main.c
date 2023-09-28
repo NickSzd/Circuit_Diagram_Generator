@@ -16,17 +16,19 @@ bool validate_Expression(char* expr){
             push(&myStack, expr[i]);
             //Display(myStack);
         }
-        if(expr[i] == ']' ||expr[i] == ')' || expr[i] == '}' ){
-            //printf("POP: %c\n", expr[i]);
+        else{
+            if(isEmpty(myStack) ||  
+                (expr[i] == ']' && peek(myStack) != '[') ||
+                (expr[i] == ')' && peek(myStack) != '(') || 
+                (expr[i] == '}' && peek(myStack) != '{')) {
+                    return false;
+            }
             pop(&myStack);
         }
-        else{
-            printf("ITEM: %c\n", expr[i]);
-        }
+
     }
-    if(isEmpty(myStack))
-        return true;
-    return false;
+    
+    return isEmpty(myStack);
 }
 
 int main(){
@@ -43,8 +45,10 @@ int main(){
     printf("%zu\n", strlen(buffer));
     if(validate_Expression(buffer))
         printf("Valid Expression\n");
-    else
+    else{
+        printf("Invalid Expression\n");
         return 1;
+    }
     
     int tokenCount = tokenize(buffer, tokens, sizeof(tokens) / sizeof(tokens[0]));
 

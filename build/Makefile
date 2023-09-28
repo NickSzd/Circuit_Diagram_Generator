@@ -201,6 +201,30 @@ src/token.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/circuit_Diagram_Generator.dir/build.make CMakeFiles/circuit_Diagram_Generator.dir/src/token.c.s
 .PHONY : src/token.c.s
 
+src/tree.o: src/tree.c.o
+.PHONY : src/tree.o
+
+# target to build an object file
+src/tree.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circuit_Diagram_Generator.dir/build.make CMakeFiles/circuit_Diagram_Generator.dir/src/tree.c.o
+.PHONY : src/tree.c.o
+
+src/tree.i: src/tree.c.i
+.PHONY : src/tree.i
+
+# target to preprocess a source file
+src/tree.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circuit_Diagram_Generator.dir/build.make CMakeFiles/circuit_Diagram_Generator.dir/src/tree.c.i
+.PHONY : src/tree.c.i
+
+src/tree.s: src/tree.c.s
+.PHONY : src/tree.s
+
+# target to generate assembly for a file
+src/tree.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circuit_Diagram_Generator.dir/build.make CMakeFiles/circuit_Diagram_Generator.dir/src/tree.c.s
+.PHONY : src/tree.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -219,6 +243,9 @@ help:
 	@echo "... src/token.o"
 	@echo "... src/token.i"
 	@echo "... src/token.s"
+	@echo "... src/tree.o"
+	@echo "... src/tree.i"
+	@echo "... src/tree.s"
 .PHONY : help
 
 
