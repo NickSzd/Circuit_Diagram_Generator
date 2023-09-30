@@ -11,21 +11,28 @@ bool validate_Expression(char* expr){
     initStack(&myStack);
 
     for(int i = 0; i < strlen(expr);i++){
+        // If expr[i] is (, [, { push into the stack
         if(expr[i] == '[' ||expr[i] == '(' || expr[i] == '{' ){
             //printf("PUSH: %c\n", expr[i]);
             push(&myStack, expr[i]);
-            //Display(myStack);
-        }
-        else{
-            if(isEmpty(myStack) ||  
-                (expr[i] == ']' && peek(myStack) != '[') ||
-                (expr[i] == ')' && peek(myStack) != '(') || 
-                (expr[i] == '}' && peek(myStack) != '{')) {
-                    return false;
-            }
+            // printf("Pushed: %c\n",peek(myStack));
+            // Display(myStack);
+            
+        } // if the stack is empty and expr[i] is a closing symbol then return false
+        else if(isEmpty(myStack) && (expr[i] == '}' || expr[i] == ')' || expr[i] == ']')){
+            //printf("IsEmpty Error\n");
+            return false;
+        } // if the closing symbol does not match the opening symbol return false
+        else if(((expr[i] == '}' && peek(myStack) != '{') || (expr[i] == ']' && peek(myStack) != '[')  || (expr[i] == ')' && peek(myStack) != '(') )){
+            // Display(myStack);
+            // printf("PEEK: %c\n", peek(myStack));
+            // printf("Incorrect closing error\n");
+            return false;
+        } 
+        else if(((expr[i] == '}' && peek(myStack) == '{') || (expr[i] == ']' && peek(myStack) == '[')  || (expr[i] == ')' && peek(myStack) == '(') )){
             pop(&myStack);
         }
-
+        
     }
     
     return isEmpty(myStack);
@@ -41,6 +48,11 @@ int main(){
 
     scanf("%s", buffer);
 
+    if(strlen(buffer) > STACK_SIZE){
+        perror("BUFFER SIZE EXCEEDED");
+        return 1;
+    }
+
     printf("You have entered: %s\n", buffer);
     printf("%zu\n", strlen(buffer));
     if(validate_Expression(buffer))
@@ -51,10 +63,15 @@ int main(){
     }
     
     int tokenCount = tokenize(buffer, tokens, sizeof(tokens) / sizeof(tokens[0]));
-
-    printf("Tokens:\n");
-    for (int i = 0; i < tokenCount; i++) {
-        printf("Type: %d, Value: %s\n", tokens[i].type, tokens[i].value);
+    if(tokenCount >= 0){
+        printf("Tokens:\n");
+        for (int i = 0; i < tokenCount; i++) {
+            printf("Type: %d, Value: %s\n", tokens[i].type, tokens[i].value);
+        }
+    }
+    else{
+        perror("Invalid Operator");
+        return 1;
     }
 
     return 0;

@@ -26,7 +26,7 @@ char pop(stack *s){
 }
 
 bool isEmpty(stack s){
-    printf("pos: %d\n", s.position);
+    //printf("position: %d\n", s.position);
     if(s.c_stack[s.position] == '\0' && s.position == -1){
         return true;
     }
@@ -34,7 +34,7 @@ bool isEmpty(stack s){
 }
 
 char peek(stack s){
-    return s.c_stack[s.position-1];
+    return s.c_stack[s.position];
 }
 
 void initStack(stack *s){
@@ -42,6 +42,7 @@ void initStack(stack *s){
 }
 
 void Display(stack s){
+    printf("STACK\n");
     for (int i = s.position; i >= 0; i--)
     {
         printf("%c\n",s.c_stack[i]);

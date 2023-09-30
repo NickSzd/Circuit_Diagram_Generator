@@ -68,7 +68,7 @@ int tokenize(const char* expr, Token tokens[], int numTokens){
         }
         // Unknown
         else{
-            perror("UNKNOWN CHAR");
+            return -1;
         }
 
     }
